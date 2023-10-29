@@ -35,3 +35,6 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_RDS_HOST: ${{ secrets.AWS_RDS_HOST }}
+          AWS_RDS_PASSWORD: ${{ secrets.AWS_RDS_PASSWORD }}
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
