@@ -26,9 +26,12 @@ jobs:
 
       - name: Deploy to Lambda
         run: |
-          docker run -v "$PWD":/var/task lambci/lambda:build /var/task/deploy.sh
+          # Replace with your AWS Lambda function name and region
+          FUNCTION_NAME="lambda-functions"
+          AWS_REGION="eu-north-1"
+          
+          # Deploy the Lambda function
+          aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://./bundle.zip --region $AWS_REGION
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: eu-north-1  # Replace with your AWS region
-          AWS_FUNCTION_NAME: lambda-functions  # Replace with your Lambda function name
