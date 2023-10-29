@@ -1,6 +1,6 @@
 import os
 import json
-import requests
+from botocore.vendored import requests
 import pandas as pd
 from time import sleep
 import psycopg2
